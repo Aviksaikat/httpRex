@@ -1,0 +1,23 @@
+Sleep 1s
+Type "bin/https"
+Backspace
+Type "x "
+Backspace 2
+Type "Rex "
+Sleep 1.5s
+Type "--f "
+Sleep 500ms
+Type "test"
+Sleep 1s
+Type " --status"
+Sleep 1s
+Type " code"
+Sleep 1.5s
+Left 35
+Type "code "
+Sleep 500ms
+Enter
+Sleep 3.5s
+Ctrl+C
+Ctrl+D
+

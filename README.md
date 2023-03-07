@@ -41,7 +41,7 @@ httpRex -h
 ```
 This will display help for the tool. Here are all the switches it supports.
 
-![](media/banner.gif)
+![](media/help.gif)
 
 ```bash
 bin/httpRex -h
@@ -92,7 +92,7 @@ https://google.com
 
 ## With `--status-code` option
 
-![](media/Usage.gif)
+<!-- ![](media/Usage.gif) -->
 
 ```bash
 httpRex --u https://google.com --status-code
@@ -183,6 +183,12 @@ http://email.ryot.org/
 http://email.ryot.org/robots.txt
 ```
 
+# ⚔️ Python vs Go
+
+## Go
+![](media/go_time.png)
+## Python
+![](media/python_time.png)
 
 
 # 🤝 Contributing 
