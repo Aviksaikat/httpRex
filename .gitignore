@@ -1,0 +1,13 @@
+# Ignore `bin` dir
+bin/*
+
+*.yaml
+*.yml
+*.tape
+*.py
+*.rs
+*.gif
+*.txt
+output.gif
+check.*
+test
