@@ -31,7 +31,7 @@ go install -v github.com/aviksaikat/httpRex@latest
 - Build from source
 ```bash
 go build httpRex.go
-./httpRex.go
+./httpRex
 ```
 
 
