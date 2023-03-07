@@ -6,7 +6,6 @@ bin/*
 *.tape
 *.py
 *.rs
-*.gif
 *.txt
 output.gif
 check.*
