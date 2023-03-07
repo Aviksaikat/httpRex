@@ -7,6 +7,6 @@ bin/*
 *.py
 *.rs
 *.txt
-output.gif
+out.gif
 check.*
-test
+text
