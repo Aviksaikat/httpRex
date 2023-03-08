@@ -25,7 +25,7 @@
 # 🤖 Installation 
 - Using `go install`
 ```bash
-go install -v github.com/aviksaikat/httpRex@latest
+go install github.com/aviksaikat/httpRex@latest
 ```
 
 - Build from source

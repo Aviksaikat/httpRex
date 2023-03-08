@@ -72,6 +72,14 @@ func makeBanner() {
 	fmt.Println("\n----------------------------------------------------------------\n")
 }
 
+func showHelp() {
+	makeBanner()
+	// fmt.Println("Options:")
+	pflag.Usage()
+	os.Exit(0)
+}
+
+
 
 func getStatusCode(url string) int {
 	resp, err := http.Get(url)
@@ -159,7 +167,7 @@ func main() {
 	var outputFileType string
 	var urlFile string
 	var banner bool
-	var showHelp bool
+	var help bool
 
 
 	pflag.StringSliceVar(&urls, "l", nil, "URLs comma, space separated")
@@ -169,16 +177,21 @@ func main() {
 	pflag.StringVar(&saveFile, "o", "", "Save output to file")
 	pflag.StringVar(&outputFileType, "file-type", "text", "Output file type (text or json)")
 	pflag.BoolVar(&banner, "banner", false, "Print banner")
-	pflag.BoolVar(&showHelp, "h", false, "show help")
+	pflag.BoolVar(&help, "h", false, "show help")
 
 
 	pflag.Parse()
 
-	if showHelp {
-		makeBanner()
-		fmt.Println("Options:")
-		pflag.PrintDefaults()
-		os.Exit(0)
+	// check if there is any input from stdin
+	stat, _ := os.Stdin.Stat()
+	if (stat.Mode() & os.ModeCharDevice) != 0 {
+		if (len(urls) == 0 && url == "" && urlFile == "") {
+			showHelp()
+		}
+	}
+
+	if help {
+		showHelp()
 	}
 
 	if banner != false {
@@ -189,12 +202,13 @@ func main() {
 	makeBanner()
 
 	// Read URLs from stdin if no other source is provided
-	if len(urls) == 0 && url == "" && urlFile == ""{
+	if len(urls) == 0 && url == "" && urlFile == "" {
 		scanner := bufio.NewScanner(os.Stdin)
         for scanner.Scan() {
             urls = append(urls, scanner.Text())
-        }
+        }	
 	}
+
 
 	if url != "" {
 		urls = append(urls, url)
