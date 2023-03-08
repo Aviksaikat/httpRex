@@ -67,6 +67,13 @@ Usage of bin/httpRex:
       --u string           Single URL to check
 ```
 
+# Update 1.1
+- **Now you can pass data from `stdin`**
+
+- `cat urls.txt | httpRex`
+
+![](media/stdin.gif)
+
 ## Passing an url from the command line
 - `httpRex --u https://google.com`
 
@@ -182,6 +189,7 @@ Gitlab: https://gitlab.com/aviksaikat
 http://email.ryot.org/
 http://email.ryot.org/robots.txt
 ```
+
 
 # ⚔️ Python vs Go
 

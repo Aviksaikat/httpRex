@@ -1,6 +1,7 @@
 # Ignore `bin` dir
 bin/*
 
+httpRex
 *.yaml
 *.yml
 *.tape

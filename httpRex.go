@@ -188,14 +188,19 @@ func main() {
 
 	makeBanner()
 
+	// Read URLs from stdin if no other source is provided
 	if len(urls) == 0 && url == "" && urlFile == ""{
-		fmt.Println("Please provide at least one URL to check")
-		return
+		scanner := bufio.NewScanner(os.Stdin)
+        for scanner.Scan() {
+            urls = append(urls, scanner.Text())
+        }
 	}
 
 	if url != "" {
 		urls = append(urls, url)
 	}
+
+
 	if urlFile != "" {
 		file, err := os.Open(urlFile)
 		if err != nil {
@@ -214,6 +219,14 @@ func main() {
 			return
 		}
 	}
+
+
+    // if len(urls) == 0 && url == "" && urlFile == "" {
+    //     scanner := bufio.NewScanner(os.Stdin)
+    //     for scanner.Scan() {
+    //         urls = append(urls, scanner.Text())
+    //     }
+    // }
 
 	checkUrls(urls, printStatusCode, saveFile)
 
