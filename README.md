@@ -22,7 +22,7 @@
 - Go 1.19.5 or higher
 ```
 
-# 🤖 Installation 
+# 🛠️ Installation 
 - Using `go install`
 ```bash
 go install github.com/aviksaikat/httpRex@latest
@@ -35,7 +35,7 @@ go build httpRex.go
 ```
 
 
-# 🛠️ Usage
+# 🤖 Usage
 ```bash
 httpRex -h
 ```
